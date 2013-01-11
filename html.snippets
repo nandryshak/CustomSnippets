@@ -183,7 +183,7 @@ snip.rv = (snip.basename or 'unnamed') + '_submit'
 endsnippet
 
 snippet h1 "XHTML <h1>"
-<h1 id="${1/[\w\d]+|( )/(?1:_:\L$0\E)/g}">${1}</h1>
+<h1>$0</h1>
 endsnippet
 
 snippet head "XHTML <head>"
@@ -327,4 +327,9 @@ snippet span "Span Tag" !i
 <span class="${1}">$0</span>
 endsnippet
 
+snippet ol "Ordered List" !b
+<ol>
+    $0
+</ol>
+endsnippet
 # vim:ft=snippets:
