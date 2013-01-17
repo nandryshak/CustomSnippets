@@ -332,4 +332,62 @@ snippet ol "Ordered List" !b
     $0
 </ol>
 endsnippet
+
+snippet presscol "Pressroom Columns" !b
+<div class="columnWrapper">
+    <div class="imageColumn">
+        <a href="${1}"><img id="releaseImage" src="images/newsletters/${2}.jpg" alt="${3}" border=0></a>
+    </div>
+    <div class="titleColumn">
+        <a href="$1"><h3>${4}</h3></a>
+        <p>${5}</p>
+    </div>
+</div>
+<div class="clear"></div>
+
+endsnippet
+
+snippet col "Two Column Template" !b
+<div class="columnWrapper">
+    <div class="imageColumn">
+        ${1}
+    </div>
+    <div class="titleColumn">
+        ${2}
+    </div>
+</div>
+<div class="clear"></div>
+
+endsnippet
+
+snippet colcss "Two Column CSS" !b
+.columnWrapper {
+    width:${1:760}px;
+}
+.columnWrapper div {
+    float:left;
+}
+.columnWrapper img {
+    width:${4:190}px;
+}
+.imageColumn {
+    width:${2:200}px;
+}
+.titleColumn {
+    width:${3:540}px;
+}
+.titleColumn h3 {
+    margin-bottom: 10px;
+}
+.titleColumn h3:hover {
+    text-decoration: underline;
+}
+.clear {
+    clear:both;
+}
+endsnippet
+
+
+
+
 # vim:ft=snippets:

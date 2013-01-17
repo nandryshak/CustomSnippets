@@ -408,4 +408,31 @@ snippet { "Brackets" !i
 
 endsnippet
 
+snippet colcss "Two Column CSS" !b
+.columnWrapper {
+    width:${1:760}px;
+}
+.columnWrapper div {
+    float:left;
+}
+.columnWrapper img {
+    width:${4:190}px;
+}
+.imageColumn {
+    width:${2:200}px;
+}
+.titleColumn {
+    width:${3:540}px;
+}
+.titleColumn h3 {
+    margin-bottom: 10px;
+}
+.titleColumn h3:hover {
+    text-decoration: underline;
+}
+.clear {
+    clear:both;
+}
+endsnippet
+
 # vim:ft=snippets:
