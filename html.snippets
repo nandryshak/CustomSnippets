@@ -333,7 +333,7 @@ snippet ol "Ordered List" !b
 </ol>
 endsnippet
 
-snippet presscol "Pressroom Columns" !b
+snippet pcol "Pressroom Columns" !b
 <div class="columnWrapper">
     <div class="imageColumn">
         <a href="${1}"><img id="releaseImage" src="images/newsletters/${2}.jpg" alt="${3}" border=0></a>
@@ -387,7 +387,27 @@ snippet colcss "Two Column CSS" !b
 }
 endsnippet
 
+snippet prel "Press Release Template" !b
+<div class="content">
+    <h2>${1:SUBTITLE}</h2>
+    <hr>
+    <div class="imageBox">
+        <div class="productImage">
+            <img src="${2:IMAGEURL}" alt="${3:IMAGEALT}" border=0>
+        </div>
+        <div class="productQuote">
+            ${4:IMAGECAPTION}
+        </div>
+    </div>
+    <p>Beachwood, NJ — ${5:RELEASEDATE} </p>
 
+    ${6}
 
+    <p># # #</p>
+    <p>About LANshack.com</p>
+    <p>Founded in 1997, LANshack.com is an online distributor of high quality datacom products - such as copper cabling hardware, fiber optic cable assemblies, tools and testers - catering to the low voltage cabling industry for use in premise networks, security, and electrical applications. The  e-commerce site includes many new user-friendly features to aid in the selection and purchase of network cabling infrastructure products, from streamlined navigation to expanded informational offerings, a quote generation system, and an easy checkout process.</p>
+</div>
+
+endsnippet
 
 # vim:ft=snippets:
