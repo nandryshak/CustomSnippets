@@ -85,6 +85,18 @@ snippet option "Option (option)"
 &#x2325;
 endsnippet
 
+snippet gt "Greater Than" !i
+&gt;
+endsnippet
+
+snippet lt "Less Than" !i
+&lt;
+endsnippet
+
+snippet & "Amperstand" !i
+&amp;
+endsnippet
+
 #######################
 # Conditional inserts #
 #######################
@@ -226,7 +238,7 @@ snippet table "XHTML <table>"
 endsnippet
 
 snippet a "Link" i
-<a href="${1:http://www.${2:url.com}}"${3: target="_blank"}>${4:Anchor Text}</a>
+<a href="${1}">${2}</a>
 endsnippet
 
 snippet p "paragraph"
@@ -299,6 +311,10 @@ snippet img "Image Tag" !b
 <img ${1:id="${2}" }src="${3}" alt="${4}" ${5:border=0}>
 endsnippet
 
+snippet hr "hr tag" !b
+<hr>
+endsnippet
+
 snippet h2 "Header 2" !b
 <h2>$0</h2>
 endsnippet
@@ -336,7 +352,7 @@ endsnippet
 snippet pcol "Pressroom Columns" !b
 <div class="columnWrapper">
     <div class="imageColumn">
-        <a href="${1}"><img id="releaseImage" src="images/newsletters/${2}.jpg" alt="${3}" border=0></a>
+        <a href="${1}"><img id="releaseImage" src="images/pressroom/${2}.jpg" alt="${3}" border=0></a>
     </div>
     <div class="titleColumn">
         <a href="$1"><h3>${4}</h3></a>
@@ -344,6 +360,8 @@ snippet pcol "Pressroom Columns" !b
     </div>
 </div>
 <div class="clear"></div>
+<hr>
+
 
 endsnippet
 
@@ -357,6 +375,8 @@ snippet col "Two Column Template" !b
     </div>
 </div>
 <div class="clear"></div>
+<hr>
+
 
 endsnippet
 
@@ -406,6 +426,19 @@ snippet prel "Press Release Template" !b
     <p># # #</p>
     <p>About LANshack.com</p>
     <p>Founded in 1997, LANshack.com is an online distributor of high quality datacom products - such as copper cabling hardware, fiber optic cable assemblies, tools and testers - catering to the low voltage cabling industry for use in premise networks, security, and electrical applications. The  e-commerce site includes many new user-friendly features to aid in the selection and purchase of network cabling infrastructure products, from streamlined navigation to expanded informational offerings, a quote generation system, and an easy checkout process.</p>
+</div>
+
+endsnippet
+
+snippet clear "Adds a clear:both div" !b
+<div class="clear"></div>
+endsnippet
+
+snippet video "Adds video container" !b
+<div class="video-container">
+    <a href="http://www.youtube.com/embed/${1}"><img src="http://img.youtube.com/vi/$1/0.jpg" alt="${2}" border=0></a>
+    <p>${3}</p>
+    <p>${4}</p>
 </div>
 
 endsnippet
