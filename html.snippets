@@ -97,6 +97,10 @@ snippet & "Amperstand" !i
 &amp;
 endsnippet
 
+snippet sp "Non-breaking Space" !i
+&nbsp;
+endsnippet
+
 #######################
 # Conditional inserts #
 #######################
@@ -440,6 +444,16 @@ snippet video "Adds video container" !b
     <p>${3}</p>
     <p>${4}</p>
 </div>
+
+endsnippet
+
+snippet iframe "Adds an frame"
+<iframe width="460" height="259" src="${1}" frameborder="0" allowfullscreen></iframe>
+endsnippet
+
+snippet > "Format Tag" !i
+>
+    $0
 
 endsnippet
 
