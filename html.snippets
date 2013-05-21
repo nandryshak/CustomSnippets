@@ -182,12 +182,6 @@ snip.rv = snip.fn and 'Hallo' or 'Nothin'
 </body>
 endsnippet
 
-snippet div "XHTML <div>"
-<div`!p snip.rv=' class="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`>
-    $0
-</div>
-endsnippet
-
 snippet form "XHTML <form>"
 <form action="${1:`!p
 snip.rv = (snip.basename or 'unnamed') + '_submit'
@@ -242,7 +236,7 @@ snippet table "XHTML <table>"
 endsnippet
 
 snippet aa "Link" i
-<a href="${1}">${2}</a>
+<a href="${1}"${3}>${2}</a>
 endsnippet
 
 snippet p "paragraph"
@@ -259,12 +253,16 @@ snippet ul "unordered list"
 </ul>
 endsnippet
 
-snippet td "table cell"
+snippet td "table cell" !i
 <td>$0</td>
 endsnippet
 
-snippet tr "table row"
+snippet tr "table row" !i
 <tr>$0</tr>
+endsnippet
+
+snippet th "table header" !i
+<th>$0</th>
 endsnippet
 
 snippet title "XHTML <title>"
@@ -301,12 +299,7 @@ snippet html5 "HTML5 Template"
     <meta charset="utf-8" />
 </head>
 <body>
-    <header>
-        ${2}
-    </header>
-    <footer>
-        ${4}
-    </footer>
+    $0
 </body>
 </html>
 endsnippet
@@ -353,87 +346,6 @@ snippet ol "Ordered List" !b
 </ol>
 endsnippet
 
-snippet pcol "Pressroom Columns" !b
-<div class="columnWrapper">
-    <div class="imageColumn">
-        <a href="${1}"><img id="releaseImage" src="images/pressroom/${2}.jpg" alt="${3}" border=0></a>
-    </div>
-    <div class="titleColumn">
-        <a href="$1"><h3>${4}</h3></a>
-        <p>${5}</p>
-    </div>
-</div>
-<div class="clear"></div>
-<hr>
-
-
-endsnippet
-
-snippet col "Two Column Template" !b
-<div class="columnWrapper">
-    <div class="imageColumn">
-        ${1}
-    </div>
-    <div class="titleColumn">
-        ${2}
-    </div>
-</div>
-<div class="clear"></div>
-<hr>
-
-
-endsnippet
-
-snippet colcss "Two Column CSS" !b
-.columnWrapper {
-    width:${1:760}px;
-}
-.columnWrapper div {
-    float:left;
-}
-.columnWrapper img {
-    width:${4:190}px;
-}
-.imageColumn {
-    width:${2:200}px;
-}
-.titleColumn {
-    width:${3:540}px;
-}
-.titleColumn h3 {
-    margin-bottom: 10px;
-}
-.titleColumn h3:hover {
-    text-decoration: underline;
-}
-.clear {
-    clear:both;
-}
-endsnippet
-
-snippet prel "Press Release Template" !b
-<div class="content">
-    <h2>${1:SUBTITLE}</h2>
-    <hr>
-    <div class="imageBox">
-        <div class="productImage">
-            <img src="${2:IMAGEURL}" alt="${3:IMAGEALT}" border=0>
-        </div>
-        <div class="productQuote">
-            ${4:IMAGECAPTION}
-        </div>
-    </div>
-    <p>Beachwood, NJ — ${5:RELEASEDATE} </p>
-
-    ${6}
-
-    <p># # #</p>
-    <p>About LANshack.com</p>
-    <p>Founded in 1997, LANshack.com is an online distributor of high quality datacom products - such as copper cabling hardware, fiber optic cable assemblies, tools and testers - catering to the low voltage cabling industry for use in premise networks, security, and electrical applications. The  e-commerce site includes many new user-friendly features to aid in the selection and purchase of network cabling infrastructure products, from streamlined navigation to expanded informational offerings, a quote generation system, and an easy checkout process.</p>
-</div>
-
-endsnippet
-
 snippet clear "Adds a clear:both div" !b
 <div class="clear"></div>
 endsnippet
@@ -455,6 +367,16 @@ snippet > "Format Tag" !i
 >
     $0
 
+endsnippet
+
+snippet div "<div tag" 
+<div ${1:class="${3}"}${2:id="${3}"}>
+    $0
+</div>
+endsnippet
+
+snippet br "break" !i
+<br>
 endsnippet
 
 # vim:ft=snippets:

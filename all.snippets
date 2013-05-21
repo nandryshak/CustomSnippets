@@ -118,4 +118,12 @@ snippet > "Tags" !i
 
 endsnippet
 
+snippet date "insert date" !b
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet ( "add semi-colon" !i
+(`!p vim.command('s/$/;/')`
+endsnippet
+
 # vim:ft=snippets:
