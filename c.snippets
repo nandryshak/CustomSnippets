@@ -18,11 +18,11 @@ ${VISUAL:code}$0
 #endif
 endsnippet
 
-snippet inc "#include local header (inc)"
+snippet Inc "#include local header (inc)"
 #include "${1}"
 endsnippet
 
-snippet Inc "#include <> (Inc)"
+snippet inc "#include <> (Inc)"
 #include <${1}.h>
 endsnippet
 
@@ -38,14 +38,14 @@ endsnippet
 snippet main "main() (main)"
 int main(int argc, char *argv[])
 {
-	${0:/* code */}
+	$0
 
 	return 0;
 }
 endsnippet
 
 snippet for "for int loop (fori)"
-for (${4:size_t} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+for (${1:int i = 0}; ${2:i < 10}; ${3:i++}) {
 	${0:/* code */}
 }
 endsnippet
@@ -86,16 +86,22 @@ fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%
 endsnippet
 
 snippet if "if .. (if)"
-if(${1:/* condition */}) {
-	${2:/* code */}
+if ($1) {
+	$2
+} 
+endsnippet
+
+snippet else "else" !i
+else ${1:if }{
+    $2
 }
 endsnippet
 
 snippet ife "if .. else (ife)"
-if(${1:/* condition */}) {
-    ${2:/* code */}
+if ($1) {
+    $2
 } else {
-    ${3:/* else */}
+    $3
 }
 endsnippet
 
@@ -110,9 +116,25 @@ struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 endsnippet
 
 snippet while "while" !b
-while(${1:/* condition */}) {
-    ${3:/* code */}
-    ${2:i++;}
+while ($1) {
+    $2
+}
+endsnippet
+
+snippet // "single comment" !i
+/* $0 */
+endsnippet
+
+snippet /* "comment" !i
+/*
+ * $1
+ */$0
+endsnippet
+
+snippet f "function" !b
+${1:int} ${2:name}($3)
+{
+    $4
 }
 endsnippet
 
